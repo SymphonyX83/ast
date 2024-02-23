@@ -6,7 +6,7 @@
 
 (defn build-admin []
   (list
-   nil
+   [:a.dropdown-item {:href "/admin/equipos"} "Equipos"]
    (when (or
           (= (user-level) "A")
           (= (user-level) "S"))
