@@ -14,7 +14,7 @@
 
 (defn equipos
   [_]
-  (let [title "Mantenimiento de equipos"
+  (let [title "Mantenimiento de Equipos"
         ok (get-session-id)
         js nil
         rows (get-equipos)
@@ -23,7 +23,7 @@
 
 (defn equipos-edit
   [id]
-  (let [title "Modificar equipo"
+  (let [title "Modificar Equipo"
         ok (get-session-id)
         js (equipos-modal-script)
         row (get-equipo-id id)
@@ -41,7 +41,7 @@
 
 (defn equipos-add
   [_]
-  (let [title "Nuevo equipo"
+  (let [title "Nuevo Equipo"
         ok (get-session-id)
         js (equipos-modal-script)
         row nil
@@ -59,7 +59,7 @@
 
 (defn equipos-search
   [{params :params}]
-  (let [title "Mantenimiento de equipos"
+  (let [title "Mantenimiento de Equipos"
         ok (get-session-id)
         js nil
         search-string (:search params)

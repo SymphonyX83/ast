@@ -6,7 +6,18 @@
 
 (defn build-admin []
   (list
+   [:a.dropdown-item {:href "/admin/ft_clasificacion"} "Clasificacion (Ficha Técnica)"]
    [:a.dropdown-item {:href "/admin/equipos"} "Equipos"]
+   [:a.dropdown-item {:href "/admin/hermeticidad"} "Hermeticidad"]
+   [:a.dropdown-item {:href "/admin/lp"} "Lugares de Prueba"]
+   [:a.dropdown-item {:href "/admin/mfe"} "Materiales de Fabricacion de Envolventes"]
+   [:a.dropdown-item {:href "/admin/mfes"} "Materiales de Fabricacion de Espejos"]
+   [:a.dropdown-item {:href "/admin/mft1"} "Materiales de Fabricacion de Tapas (Hogar)"]
+   [:a.dropdown-item {:href "/admin/mft2"} "Materiales de Fabricacion de Tapas (Tubos o Fluxes)"]
+   [:a.dropdown-item {:href "/admin/ft_mm"} "Métodos de Monitoreo (Ficha Técnica)"]
+   [:a.dropdown-item {:href "/admin/ic_modelo"} "Modelos (Instrumentos de Control)"]
+   [:a.dropdown-item {:href "/admin/recipientes"} "Recipientes"]
+   [:a.dropdown-item {:href "/admin/tdd"} "Tipo de Dispositivo"]
    (when (or
           (= (user-level) "A")
           (= (user-level) "S"))
@@ -122,10 +133,10 @@
          [:body
           [:div.container.flex-nowrap.overflow-auto.margin-top {:style "margin-top:75px;margin-bottom:25px;"}
            (menus-none)
-           [:div {:style "padding-left:14px;"}
+           [:div {:style "padding-left:20px"}
             [:div
-             [:p [:h3 [:b "Mensaje: "]] [:h3 content]]
-             [:p [:h3 [:a {:href return-url} "Clic aqui para " [:strong "Continuar"]]]]]]]
+             [:p [:h4 [:b "Mensaje: "]] [:h5 content]]
+             [:p [:h4 [:a {:href return-url} "Clic aquí para " [:strong "Continuar"]]]]]]]
 
           (app-js)
           nil]
