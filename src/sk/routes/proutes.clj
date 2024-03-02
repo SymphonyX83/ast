@@ -13,6 +13,10 @@
             [sk.handlers.admin.ft_clasificacion.controller :as ft_clasificacion-controller]
             [sk.handlers.admin.ft_mm.controller :as ft_mm-controller]
             [sk.handlers.admin.ic_modelo.controller :as ic_modelo-controller]
+            [sk.handlers.admin.dictamen_ce.controller :as dictamen_ce-controller]
+            [sk.handlers.admin.dictamen_end.controller :as dictamen_end-controller]
+            [sk.handlers.admin.dictamen_rp.controller :as dictamen_rp-controller]
+            [sk.handlers.admin.dictamen_pf.controller :as dictamen_pf-controller]
             [sk.handlers.users.controller :as users-dashboard]))
 
 (defroutes proutes
@@ -106,6 +110,34 @@
   (GET "/admin/ft_mm/add" params [] (ft_mm-controller/ft_mm-add params))
   (GET "/admin/ft_mm/delete/:id" [id] (ft_mm-controller/ft_mm-delete id))
   (POST "/admin/ft_mm/search" params [] (ft_mm-controller/ft_mm-search params))
+
+  (GET "/admin/dictamen_ce" params dictamen_ce-controller/dictamen_ce)
+  (GET "/admin/dictamen_ce/edit/:id" [id] (dictamen_ce-controller/dictamen_ce-edit id))
+  (POST "/admin/dictamen_ce/save" params [] (dictamen_ce-controller/dictamen_ce-save params))
+  (GET "/admin/dictamen_ce/add" params [] (dictamen_ce-controller/dictamen_ce-add params))
+  (GET "/admin/dictamen_ce/delete/:id" [id] (dictamen_ce-controller/dictamen_ce-delete id))
+  (POST "/admin/dictamen_ce/search" params [] (dictamen_ce-controller/dictamen_ce-search params))
+
+  (GET "/admin/dictamen_end" params dictamen_end-controller/dictamen_end)
+  (GET "/admin/dictamen_end/edit/:id" [id] (dictamen_end-controller/dictamen_end-edit id))
+  (POST "/admin/dictamen_end/save" params [] (dictamen_end-controller/dictamen_end-save params))
+  (GET "/admin/dictamen_end/add" params [] (dictamen_end-controller/dictamen_end-add params))
+  (GET "/admin/dictamen_end/delete/:id" [id] (dictamen_end-controller/dictamen_end-delete id))
+  (POST "/admin/dictamen_end/search" params [] (dictamen_end-controller/dictamen_end-search params))
+
+  (GET "/admin/dictamen_rp" params dictamen_rp-controller/dictamen_rp)
+  (GET "/admin/dictamen_rp/edit/:id" [id] (dictamen_rp-controller/dictamen_rp-edit id))
+  (POST "/admin/dictamen_rp/save" params [] (dictamen_rp-controller/dictamen_rp-save params))
+  (GET "/admin/dictamen_rp/add" params [] (dictamen_rp-controller/dictamen_rp-add params))
+  (GET "/admin/dictamen_rp/delete/:id" [id] (dictamen_rp-controller/dictamen_rp-delete id))
+  (POST "/admin/dictamen_rp/search" params [] (dictamen_rp-controller/dictamen_rp-search params))
+
+  (GET "/admin/dictamen_pf" params dictamen_pf-controller/dictamen_pf)
+  (GET "/admin/dictamen_pf/edit/:id" [id] (dictamen_pf-controller/dictamen_pf-edit id))
+  (POST "/admin/dictamen_pf/save" params [] (dictamen_pf-controller/dictamen_pf-save params))
+  (GET "/admin/dictamen_pf/add" params [] (dictamen_pf-controller/dictamen_pf-add params))
+  (GET "/admin/dictamen_pf/delete/:id" [id] (dictamen_pf-controller/dictamen_pf-delete id))
+  (POST "/admin/dictamen_pf/search" params [] (dictamen_pf-controller/dictamen_pf-search params))
 
   (GET "/users" params [] (users-dashboard/users params))
   (POST "/users/search" params [] (users-dashboard/users-search params)))

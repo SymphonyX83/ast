@@ -7,7 +7,9 @@
 (defn build-admin []
   (list
    [:a.dropdown-item {:href "/admin/ft_clasificacion"} "Clasificacion (Ficha Técnica)"]
+   [:a.dropdown-item {:href "/admin/dictamen_ce"} "Condiciones del Equipo (Dictamen)"]
    [:a.dropdown-item {:href "/admin/equipos"} "Equipos"]
+   [:a.dropdown-item {:href "/admin/dictamen_end"} "Examenes no Destructivos (Dictamen)"]
    [:a.dropdown-item {:href "/admin/hermeticidad"} "Hermeticidad"]
    [:a.dropdown-item {:href "/admin/lp"} "Lugares de Prueba"]
    [:a.dropdown-item {:href "/admin/mfe"} "Materiales de Fabricacion de Envolventes"]
@@ -17,6 +19,8 @@
    [:a.dropdown-item {:href "/admin/ft_mm"} "Métodos de Monitoreo (Ficha Técnica)"]
    [:a.dropdown-item {:href "/admin/ic_modelo"} "Modelos (Instrumentos de Control)"]
    [:a.dropdown-item {:href "/admin/recipientes"} "Recipientes"]
+   [:a.dropdown-item {:href "/admin/dictamen_rp"} "Resultado de las Pruebas (Dictamen)"]
+   [:a.dropdown-item {:href "/admin/dictamen_pf"} "Prueba de Funcionamiento (Dictamen)"]
    [:a.dropdown-item {:href "/admin/tdd"} "Tipo de Dispositivo"]
    (when (or
           (= (user-level) "A")
@@ -30,7 +34,7 @@
   (list
    [:nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
     [:a.navbar-brand {:href "/"}
-     [:img.rounded-circle {:src "/images/logo.png"
+     [:img.rounded-circle {:src "/images/ast.png"
                            :alt (:site-name config)
                            :style "width:40px;"}]]
     [:button.navbar-toggler {:type "button"
@@ -57,7 +61,7 @@
   (list
    [:nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
     [:a.navbar-brand {:href "/"}
-     [:img.rounded-circle {:src "/images/logo.png"
+     [:img.rounded-circle {:src "/images/ast.png"
                            :alt (:site-name config)
                            :style "width:40px;"}]]
     [:button.navbar-toggler {:type "button"
@@ -72,7 +76,7 @@
   (list
    [:nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
     [:a.navbar-brand {:href "/"}
-     [:img.rounded-circle {:src "/images/logo.png"
+     [:img.rounded-circle {:src "/images/ast.png"
                            :alt (:site-name config)
                            :style "width:40px;"}]]
     [:button.navbar-toggler {:type "button"
