@@ -1,5 +1,5 @@
 (ns sk.handlers.admin.users.model
-  (:require [sk.models.crud :refer [Query db]]
+  (:require [sk.models.crud :refer [Query Query! db]]
             [clojure.string :as st]))
 
 ;; Start get-users
@@ -7,7 +7,7 @@
   (str
    "
     SELECT *,
-    DATE_FORMAT(dob,'%d de %M %Y','es_ES') as dob_formatted,
+    DATE_FORMAT(dob,'%d de %M %Y') as dob_formatted,
     CASE
     WHEN level = 'U' THEN 'Usuario'
     WHEN level = 'A' THEN 'Administrador'
@@ -23,6 +23,7 @@
 
 (defn get-users
   []
+  (Query! db "set GLOBAL lc_time_names = 'es_MX'")
   (Query db get-users-sql))
 ;; End get-users
 
